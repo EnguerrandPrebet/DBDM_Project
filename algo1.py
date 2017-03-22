@@ -5,16 +5,17 @@ def naive(fds,attr):
 		done = True
 		for fd in fds:
 			if(fds.prerequis.issubset(cl) and not fds.conclusion.issubset(cl)):
-				cl = cl.union(fds.prerequis)
+				cl = cl.update(fds.prerequis)
 				done = False
 	return cl
 	
 
-	
-def choose(u):
-	return u.pop()
+
 		
 def improved(fds,attr):
+	def choose(u):
+		return u.pop()
+	
 	count = dict()
 	list = dict()
 	already_added = set()
@@ -34,7 +35,7 @@ def improved(fds,attr):
 		for fd in list[a]:
 			count[fd] -= 1
 			if(count[fd] == 0):
-				update.union(fd.conclusion.difference(closure))
-				closure.union(fd.conclusion)
+				update.update(fd.conclusion.difference(closure))
+				closure.update(fd.conclusion)
 	return closure
 	
