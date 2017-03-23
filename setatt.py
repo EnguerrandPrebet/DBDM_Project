@@ -13,3 +13,5 @@ class SetAttr(set):
 	def upd_hash(self):
 		self.s_hash = hash(str(self))
 		
+	def copy(self):
+		return SetAttr(super(SetAttr,self).copy())
