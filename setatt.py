@@ -1,3 +1,5 @@
+Attribute=str #Un attribut est simplement une chaine de caractre
+
 class SetAttr(set):
 	def __init__(self, *args, **kwargs):
 		super(SetAttr,self).__init__(*args,**kwargs)
@@ -15,3 +17,18 @@ class SetAttr(set):
 		
 	def copy(self):
 		return SetAttr(super(SetAttr,self).copy())
+
+Setofsetattr=set #Un set de set d'attribut est simplement un set
+
+
+class FD:
+
+	def __init__(self,prerequis=set(),conclusion=set()):
+		self.prerequis=prerequis
+		self.conclusion=conclusion
+
+	def __repr__(self):
+		return(affichSetattr(self.prerequis)+' -> '+ affichSetattr(self.conclusion))
+
+
+SetFD=set #Un set de FD est simplement un set
