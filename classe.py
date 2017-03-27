@@ -18,7 +18,7 @@ class SetAttr(set):
 	def copy(self):
 		return SetAttr(super(SetAttr,self).copy())
 
-Setofsetattr=set #Un set de set d'attribut est simplement un set
+SetOfSetAttr=set #Un set de set d'attribut est simplement un set
 
 
 class FD:
@@ -28,7 +28,7 @@ class FD:
 		self.conclusion=conclusion
 
 	def __repr__(self):
-		return(affichSetattr(self.prerequis)+' -> '+ affichSetattr(self.conclusion))
+		return(str(self.prerequis)+' -> '+ str(self.conclusion))
 
 
 SetFD=set #Un set de FD est simplement un set
