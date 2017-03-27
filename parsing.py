@@ -1,15 +1,14 @@
-import os
+import os,sys
 
-os.chdir("D:\\Users\\Yannis\\Documents\\DBDM_Project")
+#os.chdir("D:\\Users\\Yannis\\Documents\\DBDM_Project")
 
 from classe import *
 
 
 
 
-def parseFD(filename):
-	with open(filename,'r') as fichier:
-		text=fichier.read()
+def parseFD():
+	text=sys.stdin.read()
 	text=text.split('\n')
 	list=[]	
 	for i,ligne in enumerate(text):

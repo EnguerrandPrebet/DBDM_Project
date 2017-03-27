@@ -23,7 +23,7 @@ SetOfSetAttr=set #Un set de set d'attribut est simplement un set
 
 class FD:
 
-	def __init__(self,prerequis=set(),conclusion=set()):
+	def __init__(self,prerequis=SetAttr(),conclusion=SetAttr()):
 		self.prerequis=prerequis
 		self.conclusion=conclusion
 

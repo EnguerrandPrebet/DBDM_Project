@@ -1,0 +1,5 @@
+#!/bin/bash
+
+python3 fst_parse.py $*
+
+exit
