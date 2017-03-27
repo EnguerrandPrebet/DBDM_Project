@@ -1,6 +1,6 @@
-from fd import *
+
 from classe import *
-from generate import generate
+from generate import *
 
 def naive(fds,attr):
 	cl = attr.copy()
@@ -55,7 +55,7 @@ def improved(fds,attr):
 	return closure
 	
 	
-s = SetAttr("ABC")
+"""s = SetAttr("ABC")
 s1 = SetAttr("AB")
 s2 = SetAttr("AC")
 s3 = SetAttr("A")
@@ -72,8 +72,8 @@ def test(fds,attr):
 	print("naive",naive(fds,attr))
 	print("improved",improved(fds,attr))
 	
-# test(fds,SetAttr("B"))
+test(fds,SetAttr("B"))
 
 fds = generate(5)
 
-# test(fds,SetAttr("13"))
+test(fds,SetAttr("13"))"""

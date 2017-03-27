@@ -7,8 +7,12 @@ class SetAttr(set):
 		
 	def __repr__(self):
 		s = set.__repr__(self)
-		return "".join(list(self))	
+		return "'" + " ".join(list(self)) + "'"	
 		
+	def __str__(self):
+		s = self.__repr__()
+		return s[1:-1]
+	
 	def copy(self):
 		return SetAttr(super(SetAttr,self).copy())
 
@@ -27,8 +31,12 @@ class FD:
 		self.conclusion=conclusion
 		self.s_hash = hash(str(self))
 	def __repr__(self):
-		return(str(self.prerequis)+' -> '+ str(self.conclusion))
-
+		return( "'" + str(self.prerequis)+' -> '+ str(self.conclusion) + "'")
+	
+	def __str__(self):
+		s = self.__repr__()
+		return s[1:-1]
+		
 	def __hash__(self):
 		return self.s_hash
 		

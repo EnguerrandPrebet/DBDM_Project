@@ -33,11 +33,10 @@ def decompose(fds,u):
         r.add(SetAttr(table_faux.difference(closure).union(fd_faux.prerequis)))
         continuer,table_faux,fd_faux = check_condition(fds,r)
     
-    # print("r",r)
     return r
     
     
-s = SetAttr("ABC")
+"""s = SetAttr("ABC")
 s1 = SetAttr("AB")
 s2 = SetAttr("AC")
 s3 = SetAttr("A")
@@ -50,11 +49,11 @@ s9 = SetAttr("BE")
 
 fds = [FD(s4,s5),FD(s3,s1),FD(s5,s6),FD(s7,s3),FD(s8,s9)]
 
-# print(schema(fds))
+print(schema(fds))
 
-# print(check_key(fds,SetAttr("B")))
-# print(check_key(fds,SetAttr("A")))
-# print(check_key(fds,SetAttr("E")))
+print(check_key(fds,SetAttr("B")))
+print(check_key(fds,SetAttr("A")))
+print(check_key(fds,SetAttr("E")))
 
-# print(decompose(fds,schema(fds)))
-print(decompose(generate(20),schema(generate(20))))
+print(decompose(fds,schema(fds)))"""
+# print(decompose(generate(40),schema(generate(40))))

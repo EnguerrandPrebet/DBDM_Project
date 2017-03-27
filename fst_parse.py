@@ -1,5 +1,13 @@
 import sys
 
+from normalize import *
+from decompose import *
+from algo1 import *
+from parsing import *
+from classe import *
+from generate import *
+
+
 log = open("plop.log","w")
 #Input parsing
 if(len(sys.argv) < 3):
@@ -13,18 +21,18 @@ if(algo == "-generate"):
 	generate(int(sys.argv[2]))
 
 else:
-	if(sys.argv[2] != '-'):
+	if(sys.argv[2][0] != '-'):
 		sys.stdin = open(sys.argv[2],'r')
 	
 	fds = parseFD()#TODO argument
 	
 	if(algo == "-normalize"):
 		print("normalize", file = log)
-		normalize(fds)
+		print("Normalize:",normalize(fds))
 		
 	elif(algo == "-decompose"):
 		print("decompose", file = log)
-		decompose(fds,schema(fds))
+		print("Decompose:",decompose(fds,schema(fds)))
 		
 	else:
 		if(len(sys.argv) != 4):
@@ -34,11 +42,11 @@ else:
 		
 		if(algo == "-improved"):
 			print("improved", file = log)
-			improved(fds,setAttr)
+			print("Improved:",improved(fds,setAttr))
 		
 		elif(algo == "-naive"):
 			print("naive", file = log)
-			naive(fds,setAttr)
+			print("Naive:",naive(fds,setAttr))
 			
 		else:
 			print("First argument should be: \n-naive\n-improved\n-generate\n-normalize\n-decompose", file = sys.stderr)

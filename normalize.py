@@ -1,4 +1,4 @@
-from fd import *
+
 from algo1 import *
 from generate import *
 from classe import *
@@ -41,9 +41,9 @@ def reduce(mini):
     return mini
     
     
-print(normalize(generate(5)))
+# print(normalize(generate(5)))
 
-s = SetAttr("ABC")
+"""s = SetAttr("ABC")
 s1 = SetAttr("AB")
 s2 = SetAttr("AC")
 s3 = SetAttr("A")
@@ -56,4 +56,4 @@ s9 = SetAttr("BE")
 
 fds = [FD(s4,s5),FD(s3,s1),FD(s5,s6),FD(s7,s3),FD(s8,s9)]
 
-# print(normalize(fds))
+print(normalize(fds))"""
