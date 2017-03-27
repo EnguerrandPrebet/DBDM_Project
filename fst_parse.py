@@ -24,13 +24,13 @@ else:
 		
 	elif(algo == "-decompose"):
 		print("decompose", file = log)
-		decompose(fds)
+		decompose(fds,schema(fds))
 		
 	else:
 		if(len(sys.argv) != 4):
 			print("Wrong number of arguments, 4 expected",file = sys.stderr)
 		
-		setAttr = SetAttr(sys.argv[3:])
+		setAttr = SetAttr("".join(sys.argv[3:]))
 		
 		if(algo == "-improved"):
 			print("improved", file = log)

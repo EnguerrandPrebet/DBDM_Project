@@ -1,5 +1,5 @@
 from fd import *
-from setatt import *
+from classe import *
 from generate import generate
 
 def naive(fds,attr):
@@ -8,11 +8,11 @@ def naive(fds,attr):
 	while(not done):
 		done = True
 		for fd in fds:
-			print("checking",fd)
+			# print("checking",fd)
 			if(fd.prerequis.issubset(cl) and not fd.conclusion.issubset(cl)):
-				print(cl,"contains",fd.prerequis)
+				# print(cl,"contains",fd.prerequis)
 				cl.update(fd.conclusion)
-				print(cl,"updated from",fd.conclusion)
+				# print(cl,"updated from",fd.conclusion)
 				done = False
 	return cl
 	
@@ -72,8 +72,8 @@ def test(fds,attr):
 	print("naive",naive(fds,attr))
 	print("improved",improved(fds,attr))
 	
-test(fds,SetAttr("B"))
+# test(fds,SetAttr("B"))
 
 fds = generate(5)
 
-test(fds,SetAttr("13"))
+# test(fds,SetAttr("13"))
