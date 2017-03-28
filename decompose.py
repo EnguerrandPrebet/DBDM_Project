@@ -17,8 +17,23 @@ def check_condition(fds,r):
     for fd in fds:
         closure = improved(fds,fd.prerequis)
         for table in r:
-            if(fd.prerequis.issubset(table) and not fd.conclusion.isdisjoint(table) and not table.issubset(closure)):
+            if(fd.prerequis.issubset(table)):
+                if(not fd.conclusion.isdisjoint(table) and not table.issubset(closure)):
                     return True,table,fd
+                break
+    return False,None,None
+    
+def check_condition_debug(fds,r):
+    for fd in fds:
+        closure = improved(fds,fd.prerequis)
+        test = False
+        for table in r:
+            if(fd.prerequis.issubset(table)):
+                test = True
+                if(not fd.conclusion.isdisjoint(table) and not table.issubset(closure)):
+                    return True,table,fd
+                print(fd,table)
+                break
     return False,None,None
     
 def decompose(fds,u):
@@ -29,10 +44,11 @@ def decompose(fds,u):
     while(continuer):
         r.remove(table_faux)
         closure = improved(fds,fd_faux.prerequis)
-        r.add(closure)
+        r.add(SetAttr(table_faux.intersection(closure)))
         r.add(SetAttr(table_faux.difference(closure).union(fd_faux.prerequis)))
         continuer,table_faux,fd_faux = check_condition(fds,r)
     
+    # check_condition_debug(fds,r)
     return r
     
     
