@@ -14,10 +14,10 @@ def check_key(fds,attr):
     
 
 def check_condition(fds,r):
-    for table in r:
-        for fd in fds:
-            if(fd.prerequis.issubset(table) and not fd.conclusion.isdisjoint(table)):
-                if(not check(fds,fd.prerequis,table)):
+    for fd in fds:
+        closure = improved(fds,fd.prerequis)
+        for table in r:
+            if(fd.prerequis.issubset(table) and not fd.conclusion.isdisjoint(table) and not table.issubset(closure)):
                     return True,table,fd
     return False,None,None
     
