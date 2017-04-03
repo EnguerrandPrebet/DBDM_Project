@@ -7,8 +7,12 @@ from classe import *
 
 
 
-def parseFD():
-	text=sys.stdin.read()
+def parseFD(EntreStantard,filename=""):
+	if EntreStantard:
+		text=sys.stdin.read()
+	else:
+		with open(filename,"r") as monfichier:
+			text=monfichier.read()
 	print(text)
 	text=text.split('\n')
 	list=[]	

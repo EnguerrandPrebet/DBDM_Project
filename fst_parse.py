@@ -22,9 +22,9 @@ if(algo == "-generate"):
 
 else:
 	if(sys.argv[2][0] != '-'):
-		sys.stdin = open(sys.argv[2],'r')
-	
-	fds = parseFD()#TODO argument
+		fds=parseFD(False,sys.argv[2])
+	else:
+		fds=parseFD(True)
 	
 	if(algo == "-normalize"):
 		print("normalize", file = log)
