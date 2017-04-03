@@ -17,3 +17,18 @@ Les ensembles de FD sont simplement des sets.
 4.2)
 Pour le choose A nous avons simplement utiliser la méthode de pop. Le choix de A n'est donc pas aléatoire mais ne suit aucune contrainte particuliére.
 
+
+4.3)
+Dans le cas ou un préréquis est vide, l'algorithme ne donne pas le résultat attendu (test ?). En effet la conclusion d'un préréquis vide devrait être obtenue systématiquement hors ce n'est pas le cas. 
+
+
+6.2)
+Tout les test ont était réalisés sur le même ordinateur (ordinateur personnel) à la suite.
+
+
+6.3)
+Les performances de l'algorithme 2 sont largement supérieur. De plus la complexité semble linéaire et non quadratique. 
+
+
+
+

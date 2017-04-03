@@ -1,0 +1,9 @@
+#LIF10.TD3
+
+B C  ->  A
+A C  ->  B
+A E  ->  C
+D    ->  B E
+B    ->  D E
+C    ->  E
+

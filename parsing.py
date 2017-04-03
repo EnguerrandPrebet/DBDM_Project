@@ -9,6 +9,7 @@ from classe import *
 
 def parseFD():
 	text=sys.stdin.read()
+	print(text)
 	text=text.split('\n')
 	list=[]	
 	for i,ligne in enumerate(text):
@@ -20,6 +21,7 @@ def parseFD():
 		del(text[i])
 	res=SetOfSetAttr()
 	for ligne in text:
+		print(ligne)
 		[txtpre,txtconcl]=ligne.split('->')
 		print(FD(parseSetattr(txtpre),parseSetattr(txtconcl)))
 		res.add(FD(parseSetattr(txtpre),parseSetattr(txtconcl)))
