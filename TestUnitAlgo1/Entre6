@@ -1,9 +1,0 @@
-#LIF10.CC1
-
-B E  ->  C
-C E  ->  B
-C D  ->  E
-A    ->  B D
-B    ->  A D
-E    ->  D
-

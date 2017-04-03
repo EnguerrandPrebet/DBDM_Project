@@ -1,6 +1,0 @@
-A B -> H G
-B  -> D
-B D -> C
-E  -> G C
-F  -> D B E
-H  -> G

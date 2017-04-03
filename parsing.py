@@ -1,7 +1,5 @@
 import os,sys
 
-#os.chdir("D:\\Users\\Yannis\\Documents\\DBDM_Project")
-
 from classe import *
 
 
@@ -13,7 +11,7 @@ def parseFD(EntreStantard,filename=""):
 	else:
 		with open(filename,"r") as monfichier:
 			text=monfichier.read()
-	print(text)
+	text.replace('\r','\n')
 	text=text.split('\n')
 	list=[]	
 	for i,ligne in enumerate(text):
